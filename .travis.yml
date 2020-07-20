@@ -10,8 +10,8 @@ branches:
     - "/^release-[0-9]+\\..*$/"
 
 install:
-  - echo "install ..."
-
+  - make init
+  
 stages:
   - start
 
