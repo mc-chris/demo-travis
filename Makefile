@@ -12,4 +12,5 @@ init:
 	@echo "\n"
 
 start:
-	echo "Starting ..."
+	@echo "Starting ..."
+	@./start.sh
