@@ -1,0 +1,32 @@
+language: python
+
+service: docker
+
+dist: xenial
+
+branches:
+  only:
+    - master
+    - "/^release-[0-9]+\\..*$/"
+
+install:
+  - echo "install ..."
+
+stages:
+  - start
+
+jobs:
+  include:
+    - stage: start
+      name: start
+      # env: IMAGE_BACKEND=Pillow-SIMD
+      script: |
+        make start
+    # - stage: push
+    #   name: push
+    #   if: type = push AND branch =~ /^master$/
+    #   script: |
+    #     make build
+    #     make push
+after_success:
+  - echo "after success ..."
